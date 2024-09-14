@@ -44,15 +44,15 @@ export default function Header({ color }) {
   const cursorColor = useColorModeValue("black", "white");
 
   const linkedin = () => {
-    window.open(`${profile.linkedin}`, "_blank", "noreferrer,noopener");
+    window.open(`https://www.linkedin.com/in/ryan-dosanjh-38762363/`, "_blank", "noreferrer,noopener");
   };
 
   const github = () => {
-    window.open(`${profile.github}`, "_blank", "noreferrer,noopener");
+    window.open(`https://github.com/ryand4`, "_blank", "noreferrer,noopener");
   };
 
   const email = () => {
-    window.open(`mailto:${profile.email}`, "_blank", "noreferrer,noopener");
+    window.open(`mailto:ryanas.dosanjh@gmail.com`, "_blank", "noreferrer,noopener");
   };
 
   return (
@@ -77,7 +77,7 @@ export default function Header({ color }) {
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
             lineHeight={"110%"}
           >
-            {profile.headerName} <br />
+            Hi, my name is Ryan. <br />
             
             {/* Typing animation on the role */}
             <Box
@@ -93,7 +93,7 @@ export default function Header({ color }) {
                 color: `${color}.500`,
               }}
             >
-              {profile.headerRole}
+              I'm a computer engineer.
             </Box>
           </Heading>
           
@@ -101,7 +101,7 @@ export default function Header({ color }) {
             color={"gray.500"}
             fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
           >
-            {profile.headerDesc}
+            A versatile engineer eager to contribute to innovative projects in a dynamic and evolving tech landscape.
           </Text>
 
           {/* Wrap the image in Flex to ensure it's centered */}

@@ -21,11 +21,77 @@ import {
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Fade } from "react-reveal";
-import { useState, useEffect } from "react";
-import ExperienceArray from "./ExperienceArray";
+import { useState } from "react";
 
 export default function Experience({ color }) {
-  const experience = ExperienceArray(); // Fetch experiences
+  // Hardcoded experience data
+  const experience = [
+    {
+      company: "Abbott",
+      position: "Automation Intern",
+      duration: "06/2023 - 09/2023",
+      image: "../assets/logo514.png",
+      tags: "Relevant",
+      badges: [{ name: "Sylmar, CA", colorScheme: "blue" }],
+      listItems: [
+        "Programmed machine to perform measurements, enhancing automation capabilities for precise data acquisition.",
+        "Proficient in identifying innovative engineering solutions and adept at applying a structured design and development process to bring concepts to fruition.",
+        "Utilized CAD software to design fixtures specifically engineered for automation applications.",
+      ],
+    },
+    {
+      company: "Abbott",
+      position: "Software Engineering Intern",
+      duration: "06/2022 - 09/2022",
+      image: "../assets/logo514.png",
+      tags: "Relevant",
+      badges: [{ name: "Santa Clara, CA", colorScheme: "blue" }],
+      listItems: [
+        "Processed technical setups within Visual Studio Code to help new team members and contractors access and write code.",
+        "Design, code, test, debug, and document for projects and programs associated with software verification.",
+        "Collaborate and consult with colleagues, peers, and managers to resolve technical challenges and achieve goals.",
+      ],
+    },
+    {
+      company: "Cal Poly IT",
+      position: "Audio/Visual (AV) Student Assistant (Part time)",
+      duration: "03/2022 - Present",
+      image: "../assets/logo516.png",
+      tags: "Other",
+      badges: [{ name: "San Luis Obispo, CA", colorScheme: "green" }],
+      listItems: [
+        "Debug software and hardware problems for faculty (e.g. projectors, speakers, screens).",
+        "Assist professors encountering technical difficulties during class.",
+        "Perform routine inspections/maintenance on classroom technology.",
+      ],
+    },
+    {
+      company: "Abbott",
+      position: "Quality Engineering Intern",
+      duration: "06/2021 - 08/2021",
+      image: "../assets/logo514.png",
+      tags: "Other",
+      badges: [{ name: "Fairfield, CA", colorScheme: "blue" }],
+      listItems: [
+        "Analyzed data to understand current and historical production performance and identified trends and areas in need of improvement.",
+        "Inspected production floor equipment to identify any issues and implemented a corrective action to address the root cause and minimize any operational risks.",
+        "Performed quality control to ensure compliance with manufacturing procedures and standards are being followed.",
+      ],
+    },
+    {
+      company: "Abbott",
+      position: "Maintenance & Reliability Engineering Intern",
+      duration: "06/2020 - 08/2020",
+      image: "../assets/logo514.png",
+      tags: "Other",
+      badges: [{ name: "Fairfield, CA", colorScheme: "blue" }],
+      listItems: [
+        "Performed preventive maintenance to ensure motors and gearboxes were in good condition.",
+        "Reconciled spare part inventory against the reference guides to identify any critical spare parts.",
+        "Conducted safety procedures to minimize the risk of workplace injuries.",
+      ],
+    },
+  ];
 
   // Define the two categories as options
   const options = [
@@ -38,11 +104,6 @@ export default function Experience({ color }) {
   const handleSelected = (value) => {
     setSelected(value);
   };
-
-  // Check if experiences are loading properly
-  if (!experience || experience.length === 0) {
-    return <Text>Loading experiences...</Text>; // Safeguard
-  }
 
   return (
     <>
@@ -79,10 +140,7 @@ export default function Experience({ color }) {
 
           <Stack px={4} spacing={4}>
             {experience
-              .filter((exp) => {
-                // Make sure exp.tags exist and properly compare to the selected category
-                return exp.tags && exp.tags.includes(selected);
-              }) // Filter by selected tag (Relevant/Other)
+              .filter((exp) => exp.tags === selected) // Filter by selected tag (Relevant/Other)
               .map((exp, idx) => (
                 <Fade bottom key={`${exp.company}-${idx}-${selected}`}> {/* Ensure unique key for each experience */}
                   <Card size="sm">
@@ -134,4 +192,3 @@ export default function Experience({ color }) {
     </>
   );
 }
-

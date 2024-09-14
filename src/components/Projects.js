@@ -6,7 +6,6 @@ import {
   Box,
   HStack,
   Button,
-  ButtonGroup,
   Card,
   CardBody,
   Image,
@@ -15,10 +14,46 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { Fade } from "react-reveal";
-import ProjectsArray from "./ProjectsArray";
 
 export default function Projects({ color }) {
-  const projects = ProjectsArray();
+  // Hardcoded project data
+  const projects = [
+    {
+      name: "StockSensei",
+      description:
+        "StockSensei is a web-based stock analysis platform designed to assist traders in making informed decisions. The app features tools like a stock price predictor using machine learning and a technical analysis tool for comparing moving averages.",
+      image: "../assets/project1.png",
+      buttons: [
+        { text: "Live Website", href: "https://stocksensei-h8ccbsbxbga8eaa5.westus-01.azurewebsites.net/" },
+        { text: "GitHub", href: "https://github.com/ryand4/stock_option_sim" },
+      ],
+      badges: [
+        { text: "React", colorScheme: "blue" },
+        { text: "JS", colorScheme: "yellow" },
+        { text: "Python", colorScheme: "green" },
+        { text: "Flask", colorScheme: "orange" },
+        { text: "Yahoo Finance API", colorScheme: "purple" },
+        { text: "Azure", colorScheme: "blue" },
+      ],
+    },
+    {
+      name: "Automated Data Collection and Monitoring System",
+      description:
+        "As the tech lead for a university club project, I led the development of an automated data collection and monitoring system for industrial machines. The system utilized Arduino microcontrollers to record machine status codes and unit production counts, and Python Flask to send this data to a MySQL database for analysis. The solution employed RFID tags to capture real-time data, ensuring accurate monitoring of machine performance. My role involved overseeing system integration, troubleshooting data flow issues, and ensuring the project met the required technical standards.",
+      image: "../assets/project2.png",
+      buttons: [],
+      badges: [
+        { text: "Arduino", colorScheme: "blue" },
+        { text: "C++", colorScheme: "red" },
+        { text: "Python", colorScheme: "green" },
+        { text: "Flask", colorScheme: "yellow" },
+        { text: "MySQL", colorScheme: "orange" },
+        { text: "RFID", colorScheme: "purple" },
+        { text: "LCD Display", colorScheme: "teal" },
+        { text: "API", colorScheme: "red" },
+      ],
+    },
+  ];
 
   return (
     <>
@@ -38,16 +73,18 @@ export default function Projects({ color }) {
             </HStack>
             <Divider orientation="horizontal" />
           </Stack>
+
+          {/* Display hardcoded projects */}
           <Stack px={4} spacing={4}>
-            {projects.map((project) => (
-              <Fade bottom key={project.name}>
+            {projects.map((project, idx) => (
+              <Fade bottom key={`${project.name}-${idx}`}>
                 <Card
                   direction={{
                     base: "column",
                   }}
                   overflow="hidden"
                 >
-                  <Image objectFit="cover" src={project.image} />
+                  <Image objectFit="cover" src={project.image} alt={project.name} />
 
                   <Stack>
                     <CardBody align="left">
@@ -85,4 +122,3 @@ export default function Projects({ color }) {
     </>
   );
 }
-
