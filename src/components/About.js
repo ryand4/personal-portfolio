@@ -52,7 +52,7 @@ export default function About({ color }) {
 
           {/* Condensed About Section */}
           <Text color={"gray.600"} fontSize={"xl"} px={4}>
-          I am in my senior year studying computer engineering with a passion for both software development and embedded systems. I enjoy exploring different areas of software, including machine learning, operating systems, and full-stack development, along with automation and embedded systems on the hardware side. Outside of my technical interests, I live in California and spend my free time playing and watching sports, trying local foods, cooking, working on DIY projects, and playing video games.
+          I’m a senior-year computer engineering student who loves figuring out how all the pieces of technology fit together, whether that’s digging into low-level hardware details or crafting smooth, intuitive software. At the end of the day, I’m happiest when I’m solving problems and making something work better than before. Outside the lab, you’ll find me exploring California’s local eats, staying active through sports, or tinkering with DIY projects. 
           </Text>
         </Stack>
       </Container>

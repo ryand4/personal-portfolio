@@ -34,9 +34,9 @@ export default function Experience({ color }) {
       tags: "Relevant",
       badges: [{ name: "Sylmar, CA", colorScheme: "blue" }],
       listItems: [
-        "Programmed machine to perform measurements, enhancing automation capabilities for precise data acquisition.",
-        "Proficient in identifying innovative engineering solutions and adept at applying a structured design and development process to bring concepts to fruition.",
-        "Utilized CAD software to design fixtures specifically engineered for automation applications.",
+        "Programmed a machine to automate the measurement of suture dimensions, increasing data acquisition efficiency by reducing measurement error and improving process time.",
+        "Analyzed hundreds of BOMs to identify variation in lit kits and proposed automation solutions, presenting a potential \$300M cost-saving opportunity.",
+        "Created a custom measurement method for suture dimension analysis and designed a CAD fixture to secure materials, enhancing precision and consistency in the automated measurement process.",
       ],
     },
     {
@@ -47,9 +47,9 @@ export default function Experience({ color }) {
       tags: "Relevant",
       badges: [{ name: "Santa Clara, CA", colorScheme: "blue" }],
       listItems: [
-        "Processed technical setups within Visual Studio Code to help new team members and contractors access and write code.",
-        "Design, code, test, debug, and document for projects and programs associated with software verification.",
-        "Collaborate and consult with colleagues, peers, and managers to resolve technical challenges and achieve goals.",
+        "Streamlined development environments by configuring and optimizing Visual Studio Code setups for new team members and contractors, ensuring seamless access to repositories, dependencies, and debugging tools.",
+        "Led full SDLC efforts, including design, coding, testing, debugging, and documentation for software verification, utilizing testing frameworks and continuous integration tools.",
+        "Collaborated in cross-functional teams, leveraging Agile methodologies to resolve complex technical challenges and achieve project milestones.",
       ],
     },
     {
